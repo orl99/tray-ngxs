@@ -1,0 +1,7 @@
+{
+  "name": "tray-ngxs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
