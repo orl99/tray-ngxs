@@ -13,5 +13,9 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div class="trays-grid-container">
+    <ng-container *ngFor="let tray of traysList$ | async ">
+      <app-card [ticketName]="tray.name" [roomNumber]="tray.roomNumber" [ticketNumber]="tray.id" [trayCheckpointName]="tray.trayCheckpointName"></app-card>
+    </ng-container>
+  </div>
 </ion-content>

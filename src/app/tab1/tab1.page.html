@@ -13,5 +13,33 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <form (ngSubmit)="onSubmit(traysForm.value)" #traysForm="ngForm">
+    <ion-item>
+      <ion-label>Tray ID</ion-label>
+      <ion-input [(ngModel)]="trayId" name="trayId"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tray Name</ion-label>
+      <ion-input [(ngModel)]="trayName" name="trayName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tray checkpoint</ion-label>
+      <ion-input [(ngModel)]="trayCheckpointName" name="trayCheckpointName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tray Room number</ion-label>
+      <ion-input [(ngModel)]="trayRoomNumber" name="trayRoomNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button type="submit">Save tray</ion-button>
+    </ion-item>
+  </form>
+  
+
+  <div class="trays-grid-container ion-padding">
+    <ng-container *ngFor="let tray of traysList$ | async ">
+      <app-card [ticketName]="tray.name" [roomNumber]="tray.roomNumber" [ticketNumber]="tray.id" [trayCheckpointName]="tray.trayCheckpointName"></app-card>
+    </ng-container>
+  </div>
+
 </ion-content>

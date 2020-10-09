@@ -1,4 +1,8 @@
+import { TrayTicketI } from './../models/tray-ticket.model';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { TraysTicketsState } from 'src/app/data/state/trays-tickets.state';
+import { Select } from '@ngxs/store';
 
 @Component({
   selector: 'app-tab2',
@@ -6,6 +10,8 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+
+  @Select(TraysTicketsState.getTutorials) traysList$: Observable<TrayTicketI[]>;
 
   constructor() {}
 
