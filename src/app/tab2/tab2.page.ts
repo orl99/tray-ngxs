@@ -11,7 +11,7 @@ import { Select } from '@ngxs/store';
 })
 export class Tab2Page {
 
-  @Select(TraysTicketsState.getTutorials) traysList$: Observable<TrayTicketI[]>;
+  @Select(TraysTicketsState.getTrays) traysList$: Observable<TrayTicketI[]>;
 
   constructor() {}
 

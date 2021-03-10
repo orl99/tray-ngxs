@@ -12,13 +12,15 @@ export class TraysTicketsStateModel {
     name: 'TraysTicketsState',
     defaults: {
         TrayTickets: [],
-
-    }
+    },
 })
 export class TraysTicketsState {
+    constructor() {
+        
+    }
     // Get an observable of Trays
     @Selector()
-    static getTutorials(state: TraysTicketsStateModel) {
+    static getTrays(state: TraysTicketsStateModel) {
         return state.TrayTickets;
     }
 
@@ -26,6 +28,7 @@ export class TraysTicketsState {
     add({getState, patchState, setState,  }: StateContext<TraysTicketsStateModel>, { payload }: AddTrayTicket) {
         const state = getState();
         console.log('state', state);
+        // https
         patchState({
             TrayTickets: [...state.TrayTickets, payload]
         });

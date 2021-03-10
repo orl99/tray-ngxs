@@ -20,7 +20,7 @@ export class Tab1Page {
   public trayRoomNumber: string;
   public trayCheckpointName: string;
 
-  @Select(TraysTicketsState.getTutorials) traysList$: Observable<TrayTicketI[]>;
+  @Select(TraysTicketsState.getTrays) traysList$: Observable<TrayTicketI[]>;
 
 
   constructor(private store: Store) {
